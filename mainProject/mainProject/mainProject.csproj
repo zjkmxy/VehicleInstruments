@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{306FE6E2-0F6F-444F-92FD-0A6FC67A95F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mainProject</RootNamespace>
+    <AssemblyName>mainProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UI\ans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ans.Designer.cs">
+      <DependentUpon>ans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="基础数学\circle.cs" />
+    <Compile Include="主要算法\eraseCircleElement.cs" />
+    <Compile Include="主要算法\findCircleCenter.cs" />
+    <Compile Include="主要算法\findLineInit.cs" />
+    <Compile Include="主要算法\findCircleInit.cs" />
+    <Compile Include="主要算法\findTick.cs" />
+    <Compile Include="主要算法\getDigits.cs" />
+    <Compile Include="UI\inPut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\inPut.Designer.cs">
+      <DependentUpon>inPut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="基础数学\line.cs" />
+    <Compile Include="UI\main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="基础数学\matrix.cs" />
+    <Compile Include="基础数学\myPair.cs" />
+    <Compile Include="基础数学\myPicture.cs" />
+    <Compile Include="主要算法\OTSU.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="主要算法\RANSAC.cs" />
+    <Compile Include="滤波器\sharpKirsch.cs" />
+    <Compile Include="滤波器\sharpLaplacian.cs" />
+    <Compile Include="滤波器\sharpRoberts.cs" />
+    <Compile Include="滤波器\sharpSobel.cs" />
+    <Compile Include="滤波器\smoothAverage.cs" />
+    <Compile Include="滤波器\smoothKNNF.cs" />
+    <Compile Include="滤波器\smoothMedian.cs" />
+    <Compile Include="滤波器\smoothMinSD.cs" />
+    <Compile Include="滤波器\smoothTemplate.cs" />
+    <EmbeddedResource Include="UI\ans.resx">
+      <DependentUpon>ans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\inPut.resx">
+      <DependentUpon>inPut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
